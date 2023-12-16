@@ -2,13 +2,27 @@ import React from 'react';
 import { login } from "../utils/api";
 import LoginInput from '../components/LoginInput';
 import { useNavigate } from 'react-router-dom';
+import { useSignIn } from "react-auth-kit";
+import { getUserLogged } from '../utils/api';
 
 function LoginPage() {
+    const signIn = useSignIn();
     const loginSuccess = useNavigate();
-    async function onLogin({ email, password }) {
 
+    async function onLogin({ email, password }) {
         const { error } = await login({ email, password });
+
         if (!error) {
+            const { data } = await getUserLogged();
+
+            signIn(
+                {
+                    token: data.token,
+                    expiresIn: data.data.exp,
+                    tokenType: "Bearer",
+                    authState: data.data
+                }
+            )
             loginSuccess("/dasboard");
         }
     }
