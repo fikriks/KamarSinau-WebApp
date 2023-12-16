@@ -16,6 +16,8 @@ import SdModuleDetailPage from "./pages/SdModuleDetailPage";
 import UserPage from "./pages/UserPage";
 import ModulePage from "./pages/teacher/ModulePage";
 import ModuleDetailPage from "./pages/teacher/ModuleDetailPage";
+import ProgressPage from "./pages/teacher/ProgressPage";
+import ProgressDetailPage from "./pages/teacher/ProgressDetailPage";
 
 const App = () => {
    return (
@@ -68,6 +70,22 @@ const App = () => {
            element={
              <RequireAuth loginPath={"/login"}>
                <ModuleDetailPage />
+             </RequireAuth>
+           }
+         />
+         <Route
+           path="/progress"
+           element={
+             <RequireAuth loginPath={"/login"}>
+               <ProgressPage />
+             </RequireAuth>
+           }
+         />
+         <Route
+           path="/progress/:id"
+           element={
+             <RequireAuth loginPath={"/login"}>
+               <ProgressDetailPage />
              </RequireAuth>
            }
          />
