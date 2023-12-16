@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useSearchParams } from 'react-router-dom';
 import { getActiveModules } from "../utils/local-data";
-import ModulesList from "../components/ModuleSdList";
+import ModulesList from "../components/ModuleList";
 import SearchModules from "../components/SearchModules";
 
 
