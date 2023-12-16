@@ -2,6 +2,7 @@ import React from "react";
 import { useAuthUser } from "react-auth-kit";
 import {AdminDashboard} from "./admin/Dashboard";
 import { TeacherDashboard } from "./teacher/Dashboard";
+import { StudentDashboard } from "./student/Dashboard";
 
 const DasboardPage = () => {
   const auth = useAuthUser();
@@ -15,7 +16,9 @@ const DasboardPage = () => {
         <TeacherDashboard/>
       );
   }else{
-      return <h1>Siswa</h1>;
+      return (
+        <StudentDashboard/>
+      );
   }
 };
 
