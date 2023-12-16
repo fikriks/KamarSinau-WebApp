@@ -3,6 +3,7 @@ import { AuthProvider, RequireAuth } from "react-auth-kit";
 import './styles/main.css';
 import './styles/responsive.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.js';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AboutUsPage from './pages/AboutUsPage';
@@ -18,6 +19,8 @@ import ModulePage from "./pages/teacher/ModulePage";
 import ModuleDetailPage from "./pages/teacher/ModuleDetailPage";
 import ProgressPage from "./pages/teacher/ProgressPage";
 import ProgressDetailPage from "./pages/teacher/ProgressDetailPage";
+import CoursePage from "./pages/student/CoursePage";
+import CourseDetailPage from "./pages/student/CourseDetailPage";
 
 const App = () => {
    return (
@@ -86,6 +89,22 @@ const App = () => {
            element={
              <RequireAuth loginPath={"/login"}>
                <ProgressDetailPage />
+             </RequireAuth>
+           }
+         />
+         <Route
+           path="/courses"
+           element={
+             <RequireAuth loginPath={"/login"}>
+               <CoursePage />
+             </RequireAuth>
+           }
+         />
+         <Route
+           path="/courses/:id"
+           element={
+             <RequireAuth loginPath={"/login"}>
+               <CourseDetailPage />
              </RequireAuth>
            }
          />
