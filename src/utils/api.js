@@ -1,4 +1,4 @@
-const BASE_URL = "https://notes-api.dicoding.dev/v1";
+const BASE_URL = "http://127.0.0.1:3000/api/v1";
 
 function getAccessToken() {
     return localStorage.getItem("accessToken");
@@ -34,16 +34,18 @@ async function login({ email, password }) {
         return { error: true, data: null };
     }
 
+    putAccessToken(responseJson.data.accessToken);
+
     return { error: false, data: responseJson.data };
 }
 
-async function register({ name, email, password }) {
+async function register({ name, email, password, level }) {
     const response = await fetch(`${BASE_URL}/register`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ name, email, password, level }),
     });
 
     const responseJson = await response.json();
@@ -57,14 +59,14 @@ async function register({ name, email, password }) {
 }
 
 async function getUserLogged() {
-    const response = await fetchWithToken(`${BASE_URL}/users/me`);
+    const response = await fetchWithToken(`${BASE_URL}/me`);
     const responseJson = await response.json();
 
     if (responseJson.status !== "success") {
         return { error: true, data: null };
     }
 
-    return { error: false, data: responseJson.data };
+    return { error: false, data: responseJson };
 }
 
 export {
