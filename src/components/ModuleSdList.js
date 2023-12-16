@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import ModuleItem from "./ModuleSdItem";
+import ModuleSdItem from "./ModuleSdItem";
 
-function ModuleList({ Modules }) {
+function ModuleSdList({ Modules }) {
     if (Modules.length) {
         return (
             <section className="modules-list">
                 {
                     Modules.map((module) => (
-                        <ModuleItem key={module.id} id={module.id} {...module} />
+                        <ModuleSdItem key={module.id} id={module.id} {...module} />
                     ))
                 }
             </section>
@@ -19,8 +19,8 @@ function ModuleList({ Modules }) {
     }
 }
 
-ModuleList.propTypes = {
+ModuleSdList.propTypes = {
     Modules: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
-export default ModuleList;
+export default ModuleSdList;

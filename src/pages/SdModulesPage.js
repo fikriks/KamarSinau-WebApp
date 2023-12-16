@@ -13,10 +13,10 @@ function ModulesPageWrapper() {
         setSearchParams({ keyword });
     }
 
-    return <ModulePage defaultKeyword={keyword} keywordChange={changeSearchParams} />
+    return <SdModulesPage defaultKeyword={keyword} keywordChange={changeSearchParams} />
 }
 
-class ModulePage extends React.Component {
+class SdModulesPage extends React.Component {
     constructor(props) {
         super(props);
 
@@ -55,7 +55,7 @@ class ModulePage extends React.Component {
     }
 }
 
-ModulePage.propTypes = {
+SdModulesPage.propTypes = {
     defaultKeyword: PropTypes.string.isRequired,
     keywordChange: PropTypes.func.isRequired,
 }
