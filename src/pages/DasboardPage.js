@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuthUser } from "react-auth-kit";
 import {AdminDashboard} from "./admin/Dashboard";
+import { TeacherDashboard } from "./teacher/Dashboard";
 
 const DasboardPage = () => {
   const auth = useAuthUser();
@@ -9,8 +10,10 @@ const DasboardPage = () => {
      return (
        <AdminDashboard />
      );
-  }else if(auth().role === "teacher"){
-      return <h1>Guru</h1>;
+  }else if(auth().role === "pengajar"){
+      return (
+        <TeacherDashboard/>
+      );
   }else{
       return <h1>Siswa</h1>;
   }
