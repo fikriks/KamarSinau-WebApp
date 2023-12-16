@@ -1,0 +1,32 @@
+.ql-container {
+  min-height: 10rem;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: #ff000000 !important;
+}
+
+.ql-editor {
+  height: 100%;
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+  color: black !important;
+}
+
+.ql-editor p {
+  color: black !important;
+}
+
+.ql-picker-label {
+  color: black !important;
+}
+
+.ql-picker-options {
+  color: black !important;
+}
+
+.ql-picker-item {
+  color: black !important;
+}
