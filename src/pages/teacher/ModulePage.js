@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { WrapperTeacher } from "../../layout/teacher";
 import DataTable from "react-data-table-component";
 import { Link } from "react-router-dom";
+import { useAuthUser } from "react-auth-kit";
 
 const ModulePage = () => {
   const [courses, setCourses] = useState([]);
+  const auth = useAuthUser();
 
-  // Fetch courses when component mounts
-  useEffect(() => {
-    fetchCourses();
-  }, []);
-
-  // Function to fetch courses
-  const fetchCourses = async () => {
+  const fetchCourses = useCallback(async () => {
     try {
       const response = await fetch(
         "http://localhost:3000/api/v1/course-instructors"
@@ -20,7 +16,7 @@ const ModulePage = () => {
       const data = await response.json();
 
       let courses = data.data.filter((course) => {
-        return course.userId === 2;
+        return course.userId === auth().id;
       })
 
       let resultCourses = [];
@@ -33,7 +29,11 @@ const ModulePage = () => {
     } catch (error) {
       console.error("Error fetching courses:", error);
     }
-  };
+  }, [auth]);
+  
+  useEffect(() => {
+    fetchCourses();
+  }, [fetchCourses]);
 
   const columns = [
     {
