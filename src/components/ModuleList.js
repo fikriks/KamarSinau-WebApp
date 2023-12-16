@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import ModuleSdItem from "./ModuleSdItem";
 
-function ModuleSdList({ Modules }) {
+function ModuleList({ Modules }) {
     if (Modules.length) {
         return (
             <section className="modules-list">
@@ -19,8 +19,8 @@ function ModuleSdList({ Modules }) {
     }
 }
 
-ModuleSdList.propTypes = {
+ModuleList.propTypes = {
     Modules: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
-export default ModuleSdList;
+export default ModuleList;
