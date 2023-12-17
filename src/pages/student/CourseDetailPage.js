@@ -33,7 +33,8 @@ const CourseDetailPage = () => {
 
   useEffect(() => {
     fetchModules();
-  }, [fetchModules]);
+    // eslint-disable-next-line
+  }, []);
 
     const addProgress = async (inputData) => {
     try {

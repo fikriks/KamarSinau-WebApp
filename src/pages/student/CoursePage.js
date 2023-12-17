@@ -4,8 +4,8 @@ import { useAuthUser } from "react-auth-kit";
 import CourseList from "../../components/CourseList";
 
 const CoursePage = () => {
-  const [courses, setCourses] = useState([]);
   const auth = useAuthUser();
+  const [courses, setCourses] = useState([]);
 
   const fetchCourses = useCallback(async () => {
     try {
@@ -32,7 +32,8 @@ const CoursePage = () => {
 
   useEffect(() => {
     fetchCourses();
-  }, [fetchCourses]);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <WrapperStudent>
