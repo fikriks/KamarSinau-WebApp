@@ -33,7 +33,8 @@ const ProgressPage = () => {
 
     useEffect(() => {
       fetchProgress();
-    }, [fetchProgress]);
+      // eslint-disable-next-line
+    }, []);
 
   const columns = [
     {

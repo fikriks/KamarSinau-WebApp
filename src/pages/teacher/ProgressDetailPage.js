@@ -5,20 +5,7 @@ import { useParams } from "react-router-dom";
 
 const ModuleDetailPage = () => {
     const { id } = useParams();
-    const [progressDetail, setProgressDetail] = useState([]);
     const [students, setStudents] = useState([]);
-  
-     const fetchProgressDetail = useCallback(async () => {
-       try {
-         const response = await fetch(
-           `http://localhost:3000/api/v1/progress/course/${id}/`
-         );
-         const data = await response.json();
-         setProgressDetail(data.data);
-       } catch (error) {
-         console.error("Error fetching courses:", error);
-       }
-     }, [id]);
 
      const fetchStudents = useCallback(async () => {
        try {
@@ -28,8 +15,6 @@ const ModuleDetailPage = () => {
          const data = await response.json();
 
           let resultStudents = [];
-          let countModules = 0;
-          let countProgress = 0;
 
           data.data.forEach((student, index) => {
             resultStudents[index] = {
@@ -47,9 +32,9 @@ const ModuleDetailPage = () => {
      }, [id]);
 
     useEffect(() => {
-    //   fetchProgressDetail();
       fetchStudents();
-    }, [fetchStudents]);
+      // eslint-disable-next-line
+    }, []);
 
   const columns = [
     {
