@@ -15,7 +15,7 @@ const Footer = () => {
                                 src={image}
                                 alt="Logo KamarSinau" />{'   '}<span className="kamar">Kamar</span><span className="sinau">Sinau</span>
                         </h1>
-                        <p className='ms-3'>Untuk Informasi yang lebih Details, Anda dapat mengunjungi dan Mengikuti akun kami Di:</p>
+                        <p className='ms-3 text-white'>Untuk Informasi yang lebih Details, Anda dapat mengunjungi dan Mengikuti akun kami Di:</p>
                         <div className="sosial-media-list d-flex ms-5">
                             <div className="sosial-media me-2"><FaGithub /></div>
                             <div className="sosial-media me-2"><FaLinkedin /></div>

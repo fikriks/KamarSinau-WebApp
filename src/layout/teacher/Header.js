@@ -48,11 +48,6 @@ const Header = () => {
                   ABOUT US
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link text-light" to="/forum">
-                  FORUM
-                </Link>
-              </li>
               {isAuthenticated ? (
                 <li className="nav-item">
                   <Link className="nav-link text-light ms-2" to="/dasboard">

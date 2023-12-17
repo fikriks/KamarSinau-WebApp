@@ -5,7 +5,6 @@ import {
 } from "react-icons/ai";
 
 import logo from '../assets/images/logo.png';
-//import { Link } from 'react-router-dom';
 
 class Header extends Component {
     constructor() {
@@ -37,9 +36,6 @@ class Header extends Component {
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link text-light" href="/about">ABOUT US</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link text-light" href="/forum">FORUM</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link text-light ms-5" href="/register">REGISTER <span className="ms-2"> | </span> </a>
