@@ -1,6 +1,8 @@
 import React from 'react';
 import { useAuthUser } from "react-auth-kit";
 import { AdminProfile } from './admin/Profile';
+import { TeacherProfile } from './teacher/Profile';
+import { StudentProfile } from './student/Profile';
 
 const ProfilePage = () => {
     const auth = useAuthUser();
@@ -8,9 +10,9 @@ const ProfilePage = () => {
     if (auth().role === "admin") {
       return <AdminProfile />;
     } else if (auth().role === "teacher") {
-      return <h1>Guru</h1>;
+      return <TeacherProfile />;
     } else {
-      return <h1>Siswa</h1>;
+      return <StudentProfile />;
     }
 }
 
