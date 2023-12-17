@@ -438,8 +438,6 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 16px 8px;
-    margin: 0 auto;
     padding: 32px 0;
     width: 90%;
     max-width: 1200px;
@@ -452,7 +450,6 @@
     border-radius: 8px;
     border: 2px solid #0db38c;
     border-top: 5px solid;
-
 }
 
 .module-item__title {
