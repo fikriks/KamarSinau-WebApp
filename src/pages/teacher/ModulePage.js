@@ -33,7 +33,8 @@ const ModulePage = () => {
   
   useEffect(() => {
     fetchCourses();
-  }, [fetchCourses]);
+    // eslint-disable-next-line
+  }, []);
 
   const columns = [
     {

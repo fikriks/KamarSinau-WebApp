@@ -30,7 +30,8 @@ const ModuleDetailPage = () => {
   useEffect(() => {
     fetchModules();
     setMethodName("POST");
-  }, [fetchModules]);
+    // eslint-disable-next-line
+  }, []);
 
   const handleDescriptionChange = (event) => {
     setEditorHtml(event);
