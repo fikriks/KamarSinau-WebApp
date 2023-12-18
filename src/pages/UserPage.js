@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DataTable from 'react-data-table-component';
 import { WrapperAdmin } from "../layout/admin/index";
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
 const UserPage = () => {
   const [users, setUsers] = useState([]);
@@ -44,7 +45,7 @@ const UserPage = () => {
   // Function to fetch users
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/v1/users");
+      const response = await fetch(`${apiUrl}/users`);
       const data = await response.json();
       setUsers(data.data);
     } catch (error) {

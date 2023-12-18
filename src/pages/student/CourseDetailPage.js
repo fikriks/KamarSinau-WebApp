@@ -3,6 +3,7 @@ import { WrapperStudent } from "../../layout/student";
 import { useAuthUser } from "react-auth-kit";
 import { useParams } from "react-router-dom";
 import '../../styles/Course.css'
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
 const CourseDetailPage = () => {
   const [modules, setModules] = useState([]);
@@ -13,7 +14,7 @@ const CourseDetailPage = () => {
   const fetchModules = useCallback(async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/modules/course/${id}/student/${auth().id}`
+        `${apiUrl}/modules/course/${id}/student/${auth().id}`
       );
       const data = await response.json();
       
@@ -38,7 +39,7 @@ const CourseDetailPage = () => {
 
     const addProgress = async (inputData) => {
     try {
-        const response = await fetch(`http://localhost:3000/api/v1/progress`, {
+        const response = await fetch(`${apiUrl}/progress`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

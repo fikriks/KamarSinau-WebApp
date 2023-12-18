@@ -2,12 +2,14 @@ import React, {useState} from "react";
 import { WrapperTeacher } from "../../layout/teacher";
 import { useAuthUser } from "react-auth-kit";
 import { Col, Form, Row, Button } from "react-bootstrap";
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
 const Profile = () => {
   const auth = useAuthUser();
   const [userData, setUserData] = useState({
-    name: '',
-    email: '',
+    name: auth().name,
+    email: auth().email,
+    phoneNumber: auth().phoneNumber
   });
 
   const handleInputChange = (event) => {
@@ -22,7 +24,7 @@ const Profile = () => {
     try {
         const id = auth().id;
         const response = await fetch(
-          `http://localhost:3000/api/v1/users/${id}`,
+          `${apiUrl}/users/${id}`,
           {
             method: "PUT",
             headers: {
@@ -31,7 +33,7 @@ const Profile = () => {
             body: JSON.stringify(userData),
           }
         );
-        
+
         const responseJson = await response.json();
 
         if (responseJson.success) {
@@ -65,7 +67,7 @@ const Profile = () => {
                   type="text"
                   name="name"
                   placeholder="Name"
-                  defaultValue={auth().name}
+                  value={auth().name}
                   onChange={handleInputChange}
                 />
               </Col>
@@ -79,7 +81,21 @@ const Profile = () => {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  defaultValue={auth().email}
+                  value={auth().email}
+                  onChange={handleInputChange}
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row} className="mb-3">
+              <Form.Label column sm="2" className="form-label">
+                Nomor Handphone
+              </Form.Label>
+              <Col sm="10">
+                <Form.Control
+                  type="number"
+                  name="phoneNumber"
+                  placeholder="Nomor HP (contoh: 628xxxx)"
+                  value={auth().phoneNumber}
                   onChange={handleInputChange}
                 />
               </Col>

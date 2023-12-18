@@ -9,7 +9,7 @@ const ProfilePage = () => {
 
     if (auth().role === "admin") {
       return <AdminProfile />;
-    } else if (auth().role === "teacher") {
+    } else if (auth().role === "pengajar") {
       return <TeacherProfile />;
     } else {
       return <StudentProfile />;

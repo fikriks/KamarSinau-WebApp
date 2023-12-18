@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { WrapperStudent } from "../../layout/student";
 import { useAuthUser } from "react-auth-kit";
 import CourseList from "../../components/CourseList";
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
 const CoursePage = () => {
   const auth = useAuthUser();
@@ -10,7 +11,7 @@ const CoursePage = () => {
   const fetchCourses = useCallback(async () => {
     try {
       const response = await fetch(
-        "http://localhost:3000/api/v1/course-students"
+        `${apiUrl}/course-students`
       );
       const data = await response.json();
 

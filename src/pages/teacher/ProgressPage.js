@@ -3,6 +3,7 @@ import { WrapperTeacher } from "../../layout/teacher";
 import DataTable from "react-data-table-component";
 import { Link } from "react-router-dom";
 import { useAuthUser } from "react-auth-kit";
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
 const ProgressPage = () => {
     const auth = useAuthUser();
@@ -11,7 +12,7 @@ const ProgressPage = () => {
      const fetchProgress = useCallback(async () => {
        try {
          const response = await fetch(
-           "http://localhost:3000/api/v1/course-instructors"
+           `${apiUrl}/course-instructors`
          );
          const data = await response.json();
 

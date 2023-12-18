@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { WrapperTeacher } from "../../layout/teacher";
 import DataTable from "react-data-table-component";
 import { useParams } from "react-router-dom";
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
 const ModuleDetailPage = () => {
     const { id } = useParams();
@@ -10,7 +11,7 @@ const ModuleDetailPage = () => {
      const fetchStudents = useCallback(async () => {
        try {
          const response = await fetch(
-           `http://localhost:3000/api/v1/progress/course/${id}/`
+           `${apiUrl}/progress/course/${id}`
          );
          const data = await response.json();
 

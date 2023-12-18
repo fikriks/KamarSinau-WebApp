@@ -6,6 +6,7 @@ import { Col, Form, Row, Button } from "react-bootstrap";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import '../../styles/Quill.css'
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
 const ModuleDetailPage = () => {
   const [moduleData, setModuleData] = useState([]);
@@ -18,7 +19,7 @@ const ModuleDetailPage = () => {
   const fetchModules = useCallback(async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/modules/course/${id}`
+        `${apiUrl}/modules/course/${id}`
       );
       const data = await response.json();
       setModuleData(data.data);
@@ -43,7 +44,7 @@ const ModuleDetailPage = () => {
 
    const createModule = async (inputData) => {
      try {
-       const response = await fetch(`http://localhost:3000/api/v1/modules`, {
+       const response = await fetch(`${apiUrl}/modules`, {
          method: "POST",
          headers: {
            "Content-Type": "application/json",
@@ -69,7 +70,7 @@ const ModuleDetailPage = () => {
 
    const updateModule = async (inputData) => {
      try {
-       const response = await fetch(`http://localhost:3000/api/v1/modules/${moduleId}`, {
+       const response = await fetch(`${apiUrl}/modules/${moduleId}`, {
          method: "PUT",
          headers: {
            "Content-Type": "application/json",
@@ -98,7 +99,7 @@ const ModuleDetailPage = () => {
    const deleteModule = async (id) => {
      try {
        const response = await fetch(
-         `http://localhost:3000/api/v1/modules/${id}`,
+         `${apiUrl}/modules/${id}`,
          {
            method: "DELETE",
          }

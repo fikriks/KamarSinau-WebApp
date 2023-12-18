@@ -1,4 +1,4 @@
-const BASE_URL = "http://127.0.0.1:3000/api/v1";
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
 function getAccessToken() {
     return localStorage.getItem("accessToken");
@@ -19,12 +19,12 @@ async function fetchWithToken(url, options = {}) {
 }
 
 async function login({ email, password }) {
-    const response = await fetch(`${BASE_URL}/login`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
+    const response = await fetch(`${apiUrl}/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
     });
 
     const responseJson = await response.json();
@@ -40,7 +40,7 @@ async function login({ email, password }) {
 }
 
 async function register({ name, email, password, level }) {
-    const response = await fetch(`${BASE_URL}/register`, {
+    const response = await fetch(`${apiUrl}/register`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -59,7 +59,7 @@ async function register({ name, email, password, level }) {
 }
 
 async function getUserLogged() {
-    const response = await fetchWithToken(`${BASE_URL}/me`);
+    const response = await fetchWithToken(`${apiUrl}/me`);
     const responseJson = await response.json();
 
     if (responseJson.status !== "success") {

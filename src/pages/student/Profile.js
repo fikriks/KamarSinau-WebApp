@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { WrapperStudent } from "../../layout/student";
 import { useAuthUser } from "react-auth-kit";
 import { Col, Form, Row, Button } from "react-bootstrap";
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
 const Profile = () => {
   const auth = useAuthUser();
@@ -21,7 +22,7 @@ const Profile = () => {
   const updateProfile = async (userData) => {
     try {
       const id = auth().id;
-      const response = await fetch(`http://localhost:3000/api/v1/users/${id}`, {
+      const response = await fetch(`${apiUrl}/users/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

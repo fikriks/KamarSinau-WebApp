@@ -1,11 +1,7 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const SdModuleDetailPage = () => {
-    const { moduleId } = useParams();
-    console.log(moduleId);
-  
   return (
     <div className="container">
       <h1>Matematika</h1>
@@ -102,7 +98,7 @@ const SdModuleDetailPage = () => {
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body text-start">
-              <iframe
+              <iframe title={'frame-module'}
                 src="https://drive.google.com/file/d/1YVYFTLrFm29X1NPflqxpHFyKojImjW3Z/preview"
                 width="600"
                 height="700"
