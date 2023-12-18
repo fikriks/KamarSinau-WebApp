@@ -7,8 +7,8 @@ const apiUrl = process.env.REACT_APP_API_BASE_URL;
 const Profile = () => {
   const auth = useAuthUser();
   const [userData, setUserData] = useState({
-    name: "",
-    email: "",
+    name: auth().name,
+    email: auth().email,
   });
 
   const handleInputChange = (event) => {
@@ -63,7 +63,7 @@ const Profile = () => {
                   type="text"
                   name="name"
                   placeholder="Name"
-                  defaultValue={auth().name}
+                  value={userData.name}
                   onChange={handleInputChange}
                 />
               </Col>
@@ -77,7 +77,7 @@ const Profile = () => {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  defaultValue={auth().email}
+                  value={userData.email}
                   onChange={handleInputChange}
                 />
               </Col>

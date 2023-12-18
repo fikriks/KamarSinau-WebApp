@@ -67,7 +67,7 @@ const Profile = () => {
                   type="text"
                   name="name"
                   placeholder="Name"
-                  value={auth().name}
+                  value={userData.name}
                   onChange={handleInputChange}
                 />
               </Col>
@@ -81,7 +81,7 @@ const Profile = () => {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  value={auth().email}
+                  value={userData.email}
                   onChange={handleInputChange}
                 />
               </Col>
@@ -95,7 +95,7 @@ const Profile = () => {
                   type="number"
                   name="phoneNumber"
                   placeholder="Nomor HP (contoh: 628xxxx)"
-                  value={auth().phoneNumber}
+                  value={userData.phoneNumber}
                   onChange={handleInputChange}
                 />
               </Col>
