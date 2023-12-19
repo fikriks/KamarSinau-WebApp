@@ -118,7 +118,11 @@ const CourseDetailPage = () => {
                           : false
                       }
                     >
-                      Tandai Telah Dipelajari
+                      {module.Progresses.filter((item) => {
+                        return item.userId === auth().id;
+                      }).length > 0
+                        ? 'Telah Dipelajari'
+                        : " Tandai Telah Dipelajari"}
                     </button>
                   </div>
                 </div>
