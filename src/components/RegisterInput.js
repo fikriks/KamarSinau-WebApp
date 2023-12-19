@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import image from '../assets/images/register.png';
+import image from '../assets/images/login.png';
 import PropTypes from "prop-types";
 
 class RegisterInput extends React.Component {
