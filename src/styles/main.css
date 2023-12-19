@@ -153,6 +153,10 @@
 .footer-right p {
     font-size: 14px;
     text-align: justify;
+    color: whitesmoke !important;
+}
+
+.footer-right .ms-3 {
     color: whitesmoke;
 }
 

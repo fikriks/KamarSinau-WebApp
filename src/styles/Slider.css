@@ -1,0 +1,16 @@
+.carousel-item {
+    max-height: 60vh;
+    object-fit: cover;
+}
+
+.carousel-item h2 {
+    color: white !important;
+}
+
+.carousel-item .slide-1 {
+    color: white !important;
+}
+
+.carousel-item p {
+    color: white !important;
+}
