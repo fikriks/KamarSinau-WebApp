@@ -1,6 +1,8 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import images from '../assets/images/jumbotron.jpg';
+import slider1 from '../assets/images/slider-1.png';
+import slider2 from '../assets/images/slider-2.png';
+import '../styles/Slider.css';
 
 function Jumbotron() {
     return (
@@ -11,20 +13,20 @@ function Jumbotron() {
                         <Carousel>
                             <Carousel.Item>
                                 <img className="d-block w-100"
-                                    src={images}
+                                    src={slider1}
                                     alt="First slide"
                                 />
                                 <Carousel.Caption>
                                     <div className="caption align-items-center justify-content-between">
                                         <h2>SELAMAT DATANG DI Kamar<span className='sinau'>Sinau</span></h2>
-                                        <h4>Berbagai Materi Belajar untuk Memandu Para Pelajar</h4>
+                                        <h4 class="slide-1">Berbagai Materi Belajar untuk Memandu Para Pelajar</h4>
                                         <p>By@Kamar<span className='sinau'>Sinau</span></p>
                                     </div>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img className="d-block w-100"
-                                    src={images}
+                                    src={slider2}
                                     alt="Second slide"
                                 />
                                 <Carousel.Caption>
