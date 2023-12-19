@@ -16,7 +16,7 @@ function Footer() {
                                 alt="Logo KamarSinau" />{'   '}<span className="kamar">Kamar</span><span className="sinau">Sinau</span>
                         </h1>
                         <p className='ms-3'>Untuk Informasi yang lebih Details, Anda dapat mengunjungi dan Mengikuti akun kami Di:</p>
-                        <div className="sosial-media-list d-flex ms-5">
+                        <div className="sosial-media-list d-flex ms-3">
                             <div className="sosial-media me-2"><FaGithub /></div>
                             <div className="sosial-media me-2"><FaLinkedin /></div>
                             <div className="sosial-media me-2"><FaInstagram /></div>
@@ -41,7 +41,7 @@ function Footer() {
                                 <h3>Ikuti Kami</h3>
                                 <h6>Github</h6>
                                 <h6>Linkedin</h6>
-                                <h6>Istagram</h6>
+                                <h6>Instagram</h6>
                             </div>
                         </div>
                     </div>
