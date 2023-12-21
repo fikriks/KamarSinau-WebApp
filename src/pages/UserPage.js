@@ -57,7 +57,7 @@ const UserPage = () => {
   const deleteUser = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/users/${id}`,
+        `${apiUrl}/users/${id}`,
         {
           method: "DELETE",
         }
