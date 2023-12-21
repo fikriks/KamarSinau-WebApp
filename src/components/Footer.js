@@ -48,7 +48,7 @@ function Footer() {
                 </div>
                 <div className="row">
                     <div className="text-center p-2 col-12 bg-dark">
-                        <h6>Copyright &copy; 2022 Kamar<span className="sinau">Sinau</span></h6>
+                        <h6>Copyright &copy; 2022 - 2023 Kamar<span className="sinau">Sinau</span></h6>
                     </div>
                 </div>
             </div>

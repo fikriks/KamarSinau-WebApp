@@ -61,7 +61,8 @@ const Footer = () => {
           <div className="row">
             <div className="text-center p-2 col-12 bg-dark">
               <h6>
-                Copyright &copy; 2022 Kamar<span className="sinau">Sinau</span>
+                Copyright &copy; 2022 - 2023 Kamar
+                <span className="sinau">Sinau</span>
               </h6>
             </div>
           </div>
