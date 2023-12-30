@@ -23,8 +23,9 @@ function CardCategory() {
         <div className="category-card mb-3">
           <div className="category-img">
             <img
-              className="d-block w-100"
+              className="d-block"
               src={image2}
+              width={190}
               alt="gambar kategori SMP"
             />
           </div>
