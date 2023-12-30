@@ -18,7 +18,7 @@ function Jumbotron() {
                   alt="First slide"
                 />
                 <Carousel.Caption>
-                  <div className="caption me-auto">
+                  <div className="caption">
                     <h2>
                       SELAMAT DATANG DI Kamar
                       <span className="sinau">Sinau</span>
@@ -39,7 +39,7 @@ function Jumbotron() {
                   alt="Second slide"
                 />
                 <Carousel.Caption>
-                  <div className="caption me-auto">
+                  <div className="caption">
                     <h3>Sudah Siap Untuk Belajar?</h3>
                     <h4>
                       Semoga Aktifitas Belajarmu seru dan Menyenangkan Ya...

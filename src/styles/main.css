@@ -11,6 +11,9 @@
     font-weight: bold;
     color: #292929;
     text-align: start;
+    top: 50%;
+    transform: translateY(-150%);
+    bottom: initial;
 }
 
 .kamar {
