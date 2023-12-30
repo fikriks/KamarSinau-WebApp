@@ -12,38 +12,42 @@ const Sidebar = () => {
   const auth = useAuthUser();
   const signOut = useSignOut();
 
-    return (
-      <Nav className="flex-column cc">
-        <div className="user-dasboard d-flex">
-          <div className="img-dasboard">
-            <img src={userPic} alt="img-profile" />
-          </div>
-          <div className="ms-3">
-            <h1 className="fw-bold">{auth().name}</h1>
-          </div>
+  return (
+    <Nav className="flex-column cc">
+      <div className="user-dasboard d-flex">
+        <div className="img-dasboard">
+          <img src={userPic} alt="img-profile" />
         </div>
-        <Link to="/dasboard" className="nav-link-dasboard fw-bold">
-          <FaHome className="ms-3 me-3" />
-          Dashboard
-        </Link>
-        <Link to="/profile" className="nav-link-dasboard fw-bold">
-          <FaUserAlt className="ms-3 me-3" />
-          Akun Saya
-        </Link>
-        <Link to="/modules" className="nav-link-dasboard fw-bold">
-          <RiAdminFill className="ms-3 me-3" />
-          Modul Pembelajaran
-        </Link>
-        <Link to="/progress" className="nav-link-dasboard fw-bold">
-          <RiAdminFill className="ms-3 me-3" />
-          Progress Belajar
-        </Link>
-        <Link onClick={() => signOut()} className="nav-link-dasboard fw-bold">
-          <FiLogOut className="ms-3 me-3" />
-          Log Out
-        </Link>
-      </Nav>
-    );
-}
+        <div className="ms-3">
+          <h1 className="fw-bold">{auth().name}</h1>
+        </div>
+      </div>
+      <Link to="/dasboard" className="nav-link-dasboard fw-bold">
+        <FaHome className="ms-3 me-3" />
+        Dashboard
+      </Link>
+      <Link to="/profile" className="nav-link-dasboard fw-bold">
+        <FaUserAlt className="ms-3 me-3" />
+        Akun Saya
+      </Link>
+      <Link to="/modules" className="nav-link-dasboard fw-bold">
+        <RiAdminFill className="ms-3 me-3" />
+        Modul Pembelajaran
+      </Link>
+      <Link to="/questions" className="nav-link-dasboard fw-bold">
+        <RiAdminFill className="ms-3 me-3" />
+        Soal
+      </Link>
+      <Link to="/progress" className="nav-link-dasboard fw-bold">
+        <RiAdminFill className="ms-3 me-3" />
+        Progress Belajar
+      </Link>
+      <Link onClick={() => signOut()} className="nav-link-dasboard fw-bold">
+        <FiLogOut className="ms-3 me-3" />
+        Log Out
+      </Link>
+    </Nav>
+  );
+};
 
 export default Sidebar;
